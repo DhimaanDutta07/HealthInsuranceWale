@@ -7,7 +7,7 @@ import useAuthStore from '../store/auth.store'
 import { Phone, CheckCircle, Star, ArrowRight, Users, Shield, Heart, Award, Clock } from 'lucide-react'
 import { useScrollAnim } from '../components/useScrollAnim'
 import star from "./star.png"
-import lombard from "./lombard.png"
+import lombard from "./Lombard.png"
 
 const WA_SVG = (props) => (
   <svg viewBox="0 0 24 24" {...props}>
