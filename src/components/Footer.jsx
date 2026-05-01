@@ -157,18 +157,20 @@ export default function Footer({ onOpenModal }) {
             </h5>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
               <li><Link to="/claims" style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.95rem' }}>Claims Assistance</Link></li>
-              <li>
-                <a 
-                  href="/services" 
-                  style={{ 
-                    color: 'rgba(255,255,255,0.7)', 
-                    fontSize: '0.95rem',
-                    textDecoration: 'none'
-                  }}
-                >
-                  Book Free Consultation
-                </a>
-              </li>
+           <li>
+  <a 
+    href="https://cal.com/insure-well-6wcyz0/30min"
+    target="_blank"
+    rel="noopener noreferrer"
+    style={{ 
+      color: 'rgba(255,255,255,0.7)', 
+      fontSize: '0.95rem',
+      textDecoration: 'none'
+    }}
+  >
+    Book Free Consultation
+  </a>
+</li>
               <li><a href="https://abha.gov.in" target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.95rem' }}>ABHA Health ID</a></li>
               <li><a href="https://bimabharosa.irdai.gov.in/" target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.95rem' }}>Bima Bharosa Portal</a></li>
             </ul>
