@@ -33,6 +33,12 @@ export default function Home() {
     window.open('https://cal.com/insure-well-6wcyz0/30min', '_blank')
   }
 
+  const handleWhatsApp = () => {
+    const message = "Hi, I'm looking to buy a new health insurance policy. Can you guide me on the right plan?";
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`https://wa.me/919217182171?text=${encodedMessage}`, '_blank');
+  }
+
   return (
     <>
       <Navbar isLoggedIn={isLoggedIn} />
@@ -63,7 +69,7 @@ export default function Home() {
               marginBottom: '1.5rem', animation: 'fadeUp 0.7s 0.2s both'
             }}>
               <span style={{ width: 7, height: 7, background: '#4ADE80', borderRadius: '50%', animation: 'pulse 1.5s infinite' }}></span>
-              IRDAI Approved · Trusted by 10,000+ Families
+              IRDAI Approved · Trusted by 4,000+ Families
             </div>
 
             <h2 style={{
@@ -86,17 +92,17 @@ export default function Home() {
               }}>
                 <i className="fas fa-headset"></i> Book a free call
               </button>
-              <a href="https://wa.me/919971466960" target="_blank" rel="noreferrer" style={{
+              <button onClick={handleWhatsApp} style={{
                 display: 'flex', alignItems: 'center', gap: 10, padding: '14px 28px',
                 background: 'var(--wa)', color: 'white', borderRadius: 50, fontSize: '1rem',
                 fontWeight: 700, textDecoration: 'none', boxShadow: '0 4px 20px rgba(37,211,102,0.4)'
               }}>
                 <WA_SVG width="22" height="22" fill="white" /> Talk on WhatsApp
-              </a>
+              </button>
             </div>
 
             <div style={{ display: 'flex', gap: '2rem', marginTop: '2.5rem', animation: 'fadeUp 0.7s 0.8s both', flexWrap: 'wrap' }}>
-              <div><div style={{ fontSize: '1.7rem', fontWeight: 800, color: 'white' }}>5K+</div><div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.6)', marginTop: 2 }}>Families Guided</div></div>
+              <div><div style={{ fontSize: '1.7rem', fontWeight: 800, color: 'white' }}>4K+</div><div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.6)', marginTop: 2 }}>Families Guided</div></div>
               <div style={{ width: 1, background: 'rgba(255,255,255,0.2)' }}></div>
               <div><div style={{ fontSize: '1.7rem', fontWeight: 800, color: 'white' }}>₹6 Cr+</div><div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.6)', marginTop: 2 }}>Claims Assisted</div></div>
               <div style={{ width: 1, background: 'rgba(255,255,255,0.2)' }}></div>
@@ -143,31 +149,48 @@ export default function Home() {
       </section>
 
       {/* TRUST BAR */}
-      <div className="bg-white py-6 border-b border-slate-1000 overflow-hidden">
-        <div className="flex items-center gap-16 animate-marquee whitespace-nowrap">
-          {[...Array(2)].map((_, i) => (
-            <div key={i} className="flex items-center gap-16">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/HDFC-Ergo-logo.png" className="h-8 opacity-70" alt="HDFC ERGO" />
-              <img src="https://upload.wikimedia.org/wikipedia/commons/1/14/Niva_Bupa_Logo.jpg" className="h-8 opacity-70" alt="Niva Bupa" />
-              <img src="https://upload.wikimedia.org/wikipedia/commons/9/90/Care_health_insurance_logo.png" className="h-8 opacity-70" alt="Care Health" />
-              <img src={star} className="h-8 opacity-70" alt="Star Health" />
-              <img src={lombard} className="h-8 opacity-70" alt="ICICI Lombard" />
-            </div>
-          ))}
+      <div className="bg-white py-8 border-b border-slate-200 overflow-hidden">
+        <div className="flex items-center gap-14 md:gap-20 animate-marquee whitespace-nowrap">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/HDFC-Ergo-logo.png" className="h-12 md:h-14 opacity-80 hover:opacity-100 transition-opacity" alt="HDFC ERGO" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/1/14/Niva_Bupa_Logo.jpg" className="h-12 md:h-14 opacity-80 hover:opacity-100 transition-opacity" alt="Niva Bupa" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/9/90/Care_health_insurance_logo.png" className="h-12 md:h-14 opacity-80 hover:opacity-100 transition-opacity" alt="Care Health" />
+          <img src={star} className="h-12 md:h-14 opacity-80 hover:opacity-100 transition-opacity" alt="Star Health" />
+          <img src={lombard} className="h-12 md:h-14 opacity-80 hover:opacity-100 transition-opacity" alt="ICICI Lombard" />
+
+          <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/HDFC-Ergo-logo.png" className="h-12 md:h-14 opacity-80 hover:opacity-100 transition-opacity" alt="HDFC ERGO" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/1/14/Niva_Bupa_Logo.jpg" className="h-12 md:h-14 opacity-80 hover:opacity-100 transition-opacity" alt="Niva Bupa" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/9/90/Care_health_insurance_logo.png" className="h-12 md:h-14 opacity-80 hover:opacity-100 transition-opacity" alt="Care Health" />
+          <img src={star} className="h-12 md:h-14 opacity-80 hover:opacity-100 transition-opacity" alt="Star Health" />
+          <img src={lombard} className="h-12 md:h-14 opacity-80 hover:opacity-100 transition-opacity" alt="ICICI Lombard" />
+
+          <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/HDFC-Ergo-logo.png" className="h-12 md:h-14 opacity-80 hover:opacity-100 transition-opacity" alt="HDFC ERGO" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/1/14/Niva_Bupa_Logo.jpg" className="h-12 md:h-14 opacity-80 hover:opacity-100 transition-opacity" alt="Niva Bupa" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/9/90/Care_health_insurance_logo.png" className="h-12 md:h-14 opacity-80 hover:opacity-100 transition-opacity" alt="Care Health" />
+          <img src={star} className="h-12 md:h-14 opacity-80 hover:opacity-100 transition-opacity" alt="Star Health" />
+          <img src={lombard} className="h-12 md:h-14 opacity-80 hover:opacity-100 transition-opacity" alt="ICICI Lombard" />
         </div>
       </div>
 
       <style>{`
-        @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-        .animate-marquee { animation: marquee 34s linear infinite; }
-        .animate-marquee:hover { animation-play-state: paused; }
+        @keyframes marquee { 
+          from { transform: translateX(0); } 
+          to { transform: translateX(-50%); } 
+        }
+        .animate-marquee { 
+          animation: marquee 45s linear infinite; 
+        }
+        .animate-marquee:hover { 
+          animation-play-state: paused; 
+        }
       `}</style>
 
-      {/* THE EXPERIENCE — Reduced Text */}
+      {/* THE EXPERIENCE */}
       <section className="max-w-4xl mx-auto px-6 py-16">
         <div className="text-center mb-12">
-          <div className="text-emerald-600 text-xs font-semibold tracking-[3px]">THE HEALTHINSURANCEWALE EXPERIENCE</div>
-          <h2 className="font-serif text-[34px] tracking-tight mt-4 text-[#0A1F4A]">From confusion to confidence in 3 simple steps</h2>
+          <div className="text-emerald-600 text-sm font-semibold tracking-[4px]">
+            THE HEALTHINSURANCEWALE <span className="font-bold">EXPERIENCE</span>
+          </div>
+          <h2 className="font-serif text-[34px] tracking-tight mt-4 text-[#100a4a]">From confusion to confidence in 3 simple steps</h2>
         </div>
 
         <div className="space-y-10">
@@ -178,7 +201,9 @@ export default function Home() {
           ].map((step, i) => (
             <div key={i} className="flex gap-8 group">
               <div className="w-16 flex-shrink-0">
-                <div className="font-serif text-[58px] text-emerald-100 group-hover:text-emerald-200 transition-colors leading-none">{step.num}</div>
+                <div className="font-serif text-[58px] text-emerald-300 group-hover:text-emerald-500 transition-colors leading-none">
+                  {step.num}
+                </div>
               </div>
               <div className="pt-1">
                 <h3 className="text-[26px] font-semibold tracking-tight text-[#0A1F4A] mb-3">{step.title}</h3>
@@ -189,7 +214,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* WHY HEALTH INSURANCE — Reduced Text */}
+      {/* WHY HEALTH INSURANCE */}
       <section className="bg-[#0A1F4A] text-white py-16">
         <div className="max-w-5xl mx-auto px-6">
           <div className="max-w-xl mb-12">
@@ -213,7 +238,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PORTABILITY — Reduced Text */}
+      {/* PORTABILITY */}
       <section className="max-w-5xl mx-auto px-6 py-16">
         <div className="text-center mb-12">
           <div className="text-emerald-600 text-xs font-semibold tracking-[3px]">KNOW YOUR RIGHTS</div>
@@ -240,7 +265,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* TESTIMONIALS — Reduced Text */}
+      {/* TESTIMONIALS */}
       <section className="bg-slate-50 py-16">
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex justify-between items-end mb-12">
@@ -272,7 +297,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* IMPACT + REALITY — Reduced Text */}
+      {/* IMPACT + REALITY */}
       <section className="max-w-6xl mx-auto px-6 py-16">
         <div className="grid lg:grid-cols-12 gap-16">
           <div className="lg:col-span-5">
@@ -288,7 +313,7 @@ export default function Home() {
                 { icon: Users, num: "6,700+", label: "Families Guided" },
                 { icon: Award, num: "₹6 Cr+", label: "Claims Assisted" },
                 { icon: Star, num: "High", label: "Claim Support Success Rate" },
-                { icon: Clock, num: "20 Yrs", label: "Experience in Advisory" },
+                { icon: Clock, num: "10+ Yrs", label: "Experience in Advisory" },
               ].map((stat, i) => (
                 <div key={i} className="bg-white border border-slate-200 rounded-3xl p-8 hover:-translate-y-1 transition-all">
                   <div className="w-10 h-10 bg-emerald-50 rounded-2xl flex items-center justify-center mb-5">
@@ -327,7 +352,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* REAL OUTCOMES — Reduced Text */}
+      {/* REAL OUTCOMES */}
       <section className="max-w-6xl mx-auto px-6 pb-16">
         <div className="text-center mb-12">
           <div className="text-emerald-600 text-xs font-semibold tracking-[3px]">REAL OUTCOMES</div>
@@ -348,7 +373,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* OUR PROMISE — Reduced Text */}
+      {/* OUR PROMISE */}
       <section className="bg-[#0A1F4A] py-16 text-center">
         <div className="max-w-3xl mx-auto px-6">
           <div className="h-px w-14 bg-emerald-400 mx-auto mb-8" />
@@ -360,7 +385,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* WHO THIS IS FOR — Reduced Text */}
+      {/* WHO THIS IS FOR */}
       <section className="max-w-5xl mx-auto px-6 py-16">
         <div className="text-center mb-12">
           <div className="text-emerald-600 text-xs font-semibold tracking-[3px]">IS THIS FOR YOU?</div>
@@ -385,7 +410,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FINAL CTA — Reduced Text */}
+      {/* FINAL CTA */}
       <section className="bg-[#0A1F4A] py-14">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <h2 className="font-serif text-white text-[34px] tracking-tight mb-4">Ready to protect your family?</h2>
@@ -395,16 +420,14 @@ export default function Home() {
             <button onClick={handleBookCall} className="px-8 py-3.5 bg-white text-[#0A1F4A] font-semibold rounded-2xl text-base hover:bg-emerald-50 transition-all flex items-center justify-center gap-3">
               <Phone className="w-4 h-4" /> Book Free Call
             </button>
-            <a href="https://wa.me/9217182171" target="_blank" rel="noopener noreferrer" className="px-8 py-3.5 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold rounded-2xl text-base flex items-center justify-center gap-3 transition-all">
+            <button onClick={handleWhatsApp} className="px-8 py-3.5 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold rounded-2xl text-base flex items-center justify-center gap-3 transition-all">
               <WA_SVG className="w-4 h-4" fill="currentColor" /> WhatsApp Us
-            </a>
+            </button>
           </div>
         </div>
       </section>
 
-       <Footer />
-
-      
+      <Footer />
       <WAFloat />
     </>
   )

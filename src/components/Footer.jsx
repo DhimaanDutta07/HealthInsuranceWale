@@ -1,6 +1,5 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import logo from "./navbar/logoo.png";
-
 
 const WA_SVG = (
   <svg viewBox="0 0 24 24" fill="currentColor">
@@ -18,6 +17,34 @@ const AGENCY_CODES = [
 ];
 
 export default function Footer({ onOpenModal }) {
+  const location = useLocation();
+
+  const getMessage = () => {
+    const path = location.pathname;
+
+    if (path === '/') {
+      return "Hi, I'm looking to buy a new health insurance policy. Can you guide me on the right plan?";
+    } 
+    else if (path.includes('/claims')) {
+      return "Hi, I need help regarding a health insurance claim. It’s urgent—please guide me on next steps.";
+    } 
+    else if (path.includes('/faqs')) {
+      return "Hi, I have some questions about health insurance. Can you help?";
+    } 
+    else if (path.includes('/our-story')) {
+      return "Hi, I want to know more about HealthInsuranceWale. Can you tell me more?";
+    } 
+    else {
+      return "Hi, I need help with health insurance. Can you guide me?";
+    }
+  };
+
+  const handleWhatsApp = () => {
+    const message = getMessage();
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`https://wa.me/919217182171?text=${encodedMessage}`, '_blank');
+  };
+
   return (
     <footer style={{ 
       background: 'linear-gradient(135deg, #0A1F4A 0%, #0F2E6B 100%)', 
@@ -51,7 +78,7 @@ export default function Footer({ onOpenModal }) {
                   fontFamily: "'DM Serif Display',serif",
                   letterSpacing: '-0.3px'
                 }}>
-                  Health Insurance Wale
+                  healthinsurancewale
                 </h1>
                 <p style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.5)' }}>by Insurewell Advisory</p>
               </div>
@@ -68,10 +95,8 @@ export default function Footer({ onOpenModal }) {
 
           {/* Big WhatsApp CTA */}
           <div style={{ textAlign: 'right' }}>
-            <a 
-              href="https://wa.me/919217182171" 
-              target="_blank" 
-              rel="noreferrer"
+            <button 
+              onClick={handleWhatsApp}
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -82,14 +107,15 @@ export default function Footer({ onOpenModal }) {
                 borderRadius: '9999px',
                 fontWeight: 700,
                 fontSize: '1.05rem',
-                textDecoration: 'none',
+                border: 'none',
+                cursor: 'pointer',
                 boxShadow: '0 10px 30px rgba(16, 185, 129, 0.3)',
                 transition: 'all 0.3s ease'
               }}
             >
               <span style={{ width: 26, height: 26 }}>{WA_SVG}</span>
               Chat on WhatsApp
-            </a>
+            </button>
             <p style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.5)', marginTop: '0.75rem' }}>
               Instant response • 24×7
             </p>

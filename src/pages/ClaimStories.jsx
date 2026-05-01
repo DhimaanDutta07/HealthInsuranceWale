@@ -264,7 +264,7 @@ function ClaimsPublic() {
           </div>
         </div>
       </section>
-
+          <Footer />
       <WAFloat />
     </>
   );

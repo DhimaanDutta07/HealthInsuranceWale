@@ -18,8 +18,8 @@ const HEALTH_LINKS = [
 const CLAIM_LINKS = [
   { label: 'File a Claim',              href: '/claims' },
   { label: 'Claim Stories',             href: '/claim-stories' },
-  { label: 'Claim Rejection Guide',     href: '/claims#rejection' },
-  { label: 'Cashless vs Reimbursement', href: '/claims#cashless' },
+  { label: 'Claim Rejection Guide',     href: '/faqs#rejection' },
+  { label: 'Cashless vs Reimbursement', href: '/faqs#cashless' },
 ]
 
 export default function Navbar({ logged = false, onLogout = () => {} }) {
@@ -45,10 +45,8 @@ export default function Navbar({ logged = false, onLogout = () => {} }) {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-white/97 backdrop-blur-md shadow-sm border-b border-blue-100'
-          : 'bg-white/90 backdrop-blur-sm'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white border-b border-blue-100 ${
+        scrolled ? 'shadow-sm' : ''
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -65,7 +63,7 @@ export default function Navbar({ logged = false, onLogout = () => {} }) {
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-0.5">
 
-            {/* Health Insurance Dropdown (click redirects to /) */}
+            {/* Health Insurance Dropdown */}
             <div
               className="relative"
               onMouseEnter={() => {
@@ -75,7 +73,7 @@ export default function Navbar({ logged = false, onLogout = () => {} }) {
               onMouseLeave={() => {
                 closeTimeoutRef.current = setTimeout(() => {
                   setActiveDropdown(null)
-                }, 250) // 250ms delay — gives you time to move the mouse and click the options
+                }, 250)
               }}
             >
               <Link 
@@ -113,7 +111,7 @@ export default function Navbar({ logged = false, onLogout = () => {} }) {
               onMouseLeave={() => {
                 closeTimeoutRef.current = setTimeout(() => {
                   setActiveDropdown(null)
-                }, 250) // 250ms delay — gives you time to move the mouse and click the options
+                }, 250)
               }}
             >
               <button className={`flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
@@ -143,7 +141,7 @@ export default function Navbar({ logged = false, onLogout = () => {} }) {
             <Link to="/calculator" className="px-3 py-2 rounded-lg text-sm font-medium text-muted hover:text-blue-500 hover:bg-blue-50 transition-colors">Calculator</Link>
           </nav>
 
-          {/* CTA buttons - Now using modular NavActions */}
+          {/* CTA buttons */}
           <NavActions logged={logged} onLogout={onLogout} />
 
           {/* Mobile hamburger */}
@@ -157,7 +155,7 @@ export default function Navbar({ logged = false, onLogout = () => {} }) {
         </div>
       </div>
 
-      {/* Mobile Menu (preserved exactly from Project A) */}
+      {/* Mobile Menu */}
       {mobileOpen && (
         <div className="lg:hidden bg-white border-t border-blue-100 shadow-lg">
           <div className="max-w-7xl mx-auto px-4 py-4 space-y-1">

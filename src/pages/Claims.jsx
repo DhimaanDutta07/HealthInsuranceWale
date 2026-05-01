@@ -43,6 +43,12 @@ function ClaimsPublic() {
     window.open('https://cal.com/insure-well-6wcyz0/30min', '_blank');
   };
 
+  const handleWhatsApp = () => {
+    const message = "Hi, I need help regarding a health insurance claim. It’s urgent—please guide me on next steps.";
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`https://wa.me/919217182171?text=${encodedMessage}`, '_blank');
+  };
+
   return (
     <>
       <Navbar isLoggedIn={false} />
@@ -102,13 +108,13 @@ function ClaimsPublic() {
               }}>
                 <Phone className="w-5 h-5" /> Speak to Claims Expert
               </button>
-              <a href="https://wa.me/919971466960" target="_blank" rel="noreferrer" style={{
+              <button onClick={handleWhatsApp} style={{
                 padding: '16px 34px', background: 'rgba(255,255,255,0.1)', color: 'white', 
                 borderRadius: '9999px', fontWeight: 700, fontSize: '1.05rem',
                 display: 'flex', alignItems: 'center', gap: '10px', border: '1px solid rgba(255,255,255,0.3)'
               }}>
                 <MessageCircle className="w-5 h-5" /> WhatsApp Claims Help
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -200,7 +206,6 @@ function ClaimsPublic() {
         </div>
       </section>
 
-
       {/* AGENCY CODES */}
       <div style={{ background: '#0A1F4A', padding: '1.85rem 0', borderTop: '1px solid rgba(255,255,255,0.08)' }}>
         <div className="max-w-6xl mx-auto px-6">
@@ -240,16 +245,17 @@ function ClaimsPublic() {
             }}>
               Call Claims Helpline
             </button>
-            <a href="https://wa.me/919971466960" target="_blank" rel="noreferrer" style={{
+            <button onClick={handleWhatsApp} style={{
               padding: '15px 32px', background: '#10B981', color: 'white', borderRadius: '9999px',
-              fontWeight: 700, fontSize: '1.05rem', textDecoration: 'none'
+              fontWeight: 700, fontSize: '1.05rem', border: 'none', cursor: 'pointer'
             }}>
               WhatsApp Claims Team
-            </a>
+            </button>
           </div>
         </div>
       </section>
-       <Footer />
+
+      <Footer />
       <WAFloat />
     </>
   );
@@ -370,7 +376,8 @@ function ClaimsLogged() {
           </div>
         </div>
       </section>
-       <Footer />
+
+      <Footer />
       <WAFloat />
     </>
   );

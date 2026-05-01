@@ -82,9 +82,9 @@ export default function About() {
               marginTop: '2.5rem', flexWrap: 'wrap' 
             }}>
               {[
-                { number: '15,000+', label: 'Families Protected' },
+                { number: '4,000+', label: 'Families Protected' },
                 { number: '98%', label: 'Claim Success Rate' },
-                { number: '₹500 Cr+', label: 'Claims Facilitated' }
+                { number: '₹2 Cr+', label: 'Claims Facilitated' }
               ].map((stat, i) => (
                 <div key={i} style={{ textAlign: 'left' }}>
                   <div style={{ fontSize: '1.9rem', fontWeight: 700, color: '#10B981', lineHeight: 1 }}>{stat.number}</div>
