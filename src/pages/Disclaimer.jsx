@@ -10,22 +10,31 @@ export default function Disclaimer() {
     <>
       <Navbar isLoggedIn={isLoggedIn} />
 
-      <section style={{ padding: '5rem 2rem', maxWidth: 900, margin: '0 auto' }}>
+      <section style={{ 
+        padding: '4rem 1.25rem', 
+        maxWidth: 860, 
+        margin: '0 auto' 
+      }}>
         <h1 style={{ 
           fontFamily: "'DM Serif Display', serif", 
-          fontSize: '2.8rem', 
+          fontSize: 'clamp(2.4rem, 8vw, 2.8rem)', 
           color: '#0A1F4A', 
-          marginBottom: '2rem' 
+          marginBottom: '2rem',
+          lineHeight: 1.1
         }}>
           Disclaimer
         </h1>
 
-        <div style={{ fontSize: '1.05rem', lineHeight: 1.85, color: '#334155' }}>
+        <div style={{ 
+          fontSize: '1rem', 
+          lineHeight: 1.8, 
+          color: '#334155' 
+        }}>
           <p>HealthInsuranceWale.com is a platform operated by <strong>Insurewell Advisory</strong>, offering advisory services for health insurance policies and claims.</p>
 
           <p>We aim to provide accurate, updated, and relevant information; however:</p>
 
-          <ul style={{ paddingLeft: '1.5rem', margin: '1.5rem 0' }}>
+          <ul style={{ paddingLeft: '1.3rem', margin: '1.3rem 0' }}>
             <li>Policy issuance is subject to insurer underwriting guidelines</li>
             <li>Claims are subject to policy terms, conditions, and insurer approval</li>
             <li>We do not guarantee claim settlement</li>
@@ -34,7 +43,7 @@ export default function Disclaimer() {
           <p>All information provided on this website is for general guidance purposes only and should not be considered as a substitute for policy documents.</p>
 
           <p><strong>Users are advised to:</strong></p>
-          <ul style={{ paddingLeft: '1.5rem', margin: '1rem 0' }}>
+          <ul style={{ paddingLeft: '1.3rem', margin: '1rem 0' }}>
             <li>Read the policy brochure carefully</li>
             <li>Understand exclusions, waiting periods, and limitations</li>
             <li>Make informed decisions</li>
@@ -42,7 +51,7 @@ export default function Disclaimer() {
 
           <div style={{ 
             background: '#FEF3C7', 
-            padding: '1.5rem', 
+            padding: '1.35rem', 
             borderRadius: 12, 
             marginTop: '2rem',
             borderLeft: '5px solid #F59E0B'

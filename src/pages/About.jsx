@@ -29,14 +29,15 @@ export default function About() {
     <>
       <Navbar isLoggedIn={isLoggedIn} />
 
-      {/* HERO — Premium & Professional */}
+      {/* HERO - Mobile Friendly */}
       <section style={{
         background: 'linear-gradient(135deg, #0A1F4A 0%, #1E3A8A 50%, #0F2E6B 100%)',
-        minHeight: '75vh',
+        minHeight: '68vh',
         position: 'relative',
         overflow: 'hidden',
         display: 'flex',
-        alignItems: 'center'
+        alignItems: 'center',
+        padding: '2rem 1rem'
       }}>
         <div style={{
           position: 'absolute', inset: 0,
@@ -44,13 +45,13 @@ export default function About() {
           backgroundSize: '48px 48px'
         }}></div>
 
-        <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 2rem', position: 'relative', zIndex: 2, width: '100%' }}>
-          <div style={{ maxWidth: 680 }}>
+        <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 1.5rem', position: 'relative', zIndex: 2, width: '100%' }}>
+          <div style={{ maxWidth: 620 }}>
             <div style={{
               display: 'inline-flex', alignItems: 'center', gap: 10,
               background: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(14px)',
               border: '1px solid rgba(255,255,255,0.2)', color: 'white',
-              fontSize: '0.75rem', fontWeight: 700, padding: '8px 22px', borderRadius: 9999, marginBottom: '1.75rem'
+              fontSize: '0.75rem', fontWeight: 700, padding: '8px 20px', borderRadius: 9999, marginBottom: '1.5rem'
             }}>
               <span style={{ width: 8, height: 8, background: '#10B981', borderRadius: '50%', animation: 'pulse 2s infinite' }}></span>
               EST. 2018 • IRDAI LICENSED
@@ -58,19 +59,19 @@ export default function About() {
 
             <h1 style={{ 
               fontFamily: "'DM Serif Display', serif", 
-              fontSize: 'clamp(3.1rem, 6.2vw, 5.1rem)', 
-              lineHeight: 1.02, 
+              fontSize: 'clamp(2.7rem, 7vw, 4.8rem)', 
+              lineHeight: 1.05, 
               color: 'white', 
-              marginBottom: '1.4rem' 
+              marginBottom: '1.2rem' 
             }}>
               We don’t just<br />sell insurance.<br />We protect futures.
             </h1>
 
             <p style={{ 
-              fontSize: '1.2rem', 
+              fontSize: '1.1rem', 
               color: 'rgba(255,255,255,0.78)', 
-              maxWidth: 540, 
-              lineHeight: 1.65 
+              maxWidth: 500, 
+              lineHeight: 1.6 
             }}>
               In health insurance, the real difference isn’t the policy you buy —<br />
               it’s the experience you have when you need it most.
@@ -78,8 +79,8 @@ export default function About() {
 
             {/* Trust Metrics */}
             <div style={{ 
-              display: 'flex', alignItems: 'center', gap: '2.5rem', 
-              marginTop: '2.5rem', flexWrap: 'wrap' 
+              display: 'flex', alignItems: 'center', gap: '2rem', 
+              marginTop: '2.25rem', flexWrap: 'wrap' 
             }}>
               {[
                 { number: '4,000+', label: 'Families Protected' },
@@ -87,35 +88,27 @@ export default function About() {
                 { number: '₹2 Cr+', label: 'Claims Facilitated' }
               ].map((stat, i) => (
                 <div key={i} style={{ textAlign: 'left' }}>
-                  <div style={{ fontSize: '1.9rem', fontWeight: 700, color: '#10B981', lineHeight: 1 }}>{stat.number}</div>
-                  <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.65)', marginTop: '3px' }}>{stat.label}</div>
+                  <div style={{ fontSize: '1.75rem', fontWeight: 700, color: '#10B981', lineHeight: 1 }}>{stat.number}</div>
+                  <div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.65)', marginTop: '2px' }}>{stat.label}</div>
                 </div>
               ))}
             </div>
           </div>
         </div>
-
-        <div style={{
-          position: 'absolute', bottom: '2.75rem', left: '50%', transform: 'translateX(-50%)',
-          display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 5, color: 'rgba(255,255,255,0.45)', fontSize: '0.72rem', letterSpacing: '1px'
-        }}>
-          SCROLL TO DISCOVER
-          <div style={{ width: 1, height: 42, background: 'rgba(255,255,255,0.2)' }}></div>
-        </div>
       </section>
 
       {/* OUR PHILOSOPHY */}
-      <section style={{ background: 'white', padding: '5.25rem 0' }}>
+      <section style={{ background: 'white', padding: '4.5rem 1rem' }}>
         <div className="max-w-4xl mx-auto px-6">
-          <div style={{ textAlign: 'center', marginBottom: '2.75rem' }} data-anim>
+          <div style={{ textAlign: 'center', marginBottom: '2.5rem' }} data-anim>
             <div style={{ color: '#10B981', fontSize: '0.72rem', fontWeight: 800, letterSpacing: '2.5px' }}>THE HEALTHINSURANCEWALE DIFFERENCE</div>
-            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: '2.45rem', color: '#0A1F4A', marginTop: '0.55rem', lineHeight: 1.08 }}>
+            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: '2.2rem', color: '#0A1F4A', marginTop: '0.5rem', lineHeight: 1.08 }}>
               Insurance advice guided by<br />claim outcomes, not product features.
             </h2>
           </div>
 
-          <div style={{ maxWidth: 760, margin: '0 auto', fontSize: '1.05rem', lineHeight: 1.75, color: '#334155' }} data-anim>
-            <p style={{ marginBottom: '1.35rem' }}>
+          <div style={{ maxWidth: 720, margin: '0 auto', fontSize: '1rem', lineHeight: 1.7, color: '#334155' }} data-anim>
+            <p style={{ marginBottom: '1.2rem' }}>
               We observed a consistent gap: policies were sold with ease, but claims often left individuals navigating complexity alone. 
               That insight shaped everything.
             </p>
@@ -127,48 +120,48 @@ export default function About() {
         </div>
       </section>
 
-      {/* REAL IMPACT — Professional Case Study */}
-      <section style={{ background: '#0A1F4A', color: 'white', padding: '4.75rem 0' }}>
+      {/* REAL IMPACT */}
+      <section style={{ background: '#0A1F4A', color: 'white', padding: '4rem 1rem' }}>
         <div className="max-w-5xl mx-auto px-6" data-anim>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.05fr', gap: '3rem', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.05fr', gap: '2.5rem', alignItems: 'center' }}>
             <div>
               <div style={{ color: '#10B981', fontSize: '0.72rem', fontWeight: 800, letterSpacing: '2.5px' }}>REAL STORY • REAL RESULT</div>
-              <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: '2.35rem', lineHeight: 1.1, margin: '1rem 0 1.25rem' }}>
+              <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: '2.1rem', lineHeight: 1.1, margin: '0.9rem 0 1.1rem' }}>
                 When everything<br />was on the line
               </h2>
-              <p style={{ fontSize: '1.02rem', color: 'rgba(255,255,255,0.82)', lineHeight: 1.7 }}>
+              <p style={{ fontSize: '0.98rem', color: 'rgba(255,255,255,0.82)', lineHeight: 1.65 }}>
                 A client faced a hospitalization with a total bill exceeding ₹18 lakh. Documentation gaps and coordination delays between the hospital and insurer created serious challenges.
               </p>
             </div>
 
             <div style={{ 
               background: 'rgba(255,255,255,0.07)', 
-              borderRadius: 20, 
-              padding: '2rem 1.85rem', 
+              borderRadius: 18, 
+              padding: '1.75rem 1.6rem', 
               border: '1px solid rgba(255,255,255,0.12)' 
             }}>
-              <div style={{ color: '#10B981', fontWeight: 700, fontSize: '0.9rem', marginBottom: '1.05rem' }}>OUR TEAM STEPPED IN TO:</div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.9rem' }}>
+              <div style={{ color: '#10B981', fontWeight: 700, fontSize: '0.85rem', marginBottom: '0.95rem' }}>OUR TEAM STEPPED IN TO:</div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
                 {[
                   'Align all documentation with insurer requirements',
                   'Coordinate directly with the hospital TPA desk',
                   'Manage timely communication and follow-ups',
                   'Guide the client through every stage of the process'
                 ].map((item, i) => (
-                  <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 13, fontSize: '0.95rem' }}>
+                  <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 11, fontSize: '0.92rem' }}>
                     <div style={{ 
-                      width: 22, height: 22, background: '#10B981', borderRadius: '50%', 
+                      width: 20, height: 20, background: '#10B981', borderRadius: '50%', 
                       display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: 1 
                     }}>
-                      <CheckCircle className="w-3.5 h-3.5 text-white" />
+                      <CheckCircle className="w-3 h-3 text-white" />
                     </div>
                     {item}
                   </div>
                 ))}
               </div>
               <div style={{ 
-                marginTop: '1.5rem', paddingTop: '1.15rem', borderTop: '1px solid rgba(255,255,255,0.18)', 
-                fontWeight: 700, color: '#10B981', fontSize: '0.95rem' 
+                marginTop: '1.35rem', paddingTop: '1rem', borderTop: '1px solid rgba(255,255,255,0.18)', 
+                fontWeight: 700, color: '#10B981', fontSize: '0.92rem' 
               }}>
                 Result: The claim was successfully processed and settled in full.
               </div>
@@ -177,17 +170,17 @@ export default function About() {
         </div>
       </section>
 
-      {/* WHAT WE STAND FOR — Professional Pillars */}
-      <section style={{ background: 'white', padding: '5.25rem 0' }}>
+      {/* WHAT WE STAND FOR */}
+      <section style={{ background: 'white', padding: '4.5rem 1rem' }}>
         <div className="max-w-6xl mx-auto px-6">
-          <div style={{ textAlign: 'center', marginBottom: '2.75rem' }} data-anim>
+          <div style={{ textAlign: 'center', marginBottom: '2.5rem' }} data-anim>
             <div style={{ color: '#10B981', fontSize: '0.72rem', fontWeight: 800, letterSpacing: '2.5px' }}>OUR CORE VALUES</div>
-            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: '2.35rem', color: '#0A1F4A', marginTop: '0.5rem' }}>
+            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: '2.15rem', color: '#0A1F4A', marginTop: '0.45rem' }}>
               What We Truly Stand For
             </h2>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(310px, 1fr))', gap: '1.5rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.35rem' }}>
             {[
               { 
                 Icon: FileText, 
@@ -207,24 +200,24 @@ export default function About() {
             ].map((item, i) => (
               <div key={i} data-anim style={{
                 background: '#F8FAFC',
-                borderRadius: 20,
-                padding: '2.15rem 1.95rem',
+                borderRadius: 18,
+                padding: '1.95rem 1.75rem',
                 border: '1px solid #e2e8f0',
                 transition: 'all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1)'
               }}
                 onMouseEnter={e => { 
-                  e.currentTarget.style.transform = 'translateY(-8px)'; 
-                  e.currentTarget.style.boxShadow = '0 25px 60px rgba(15,37,87,0.09)'; 
+                  e.currentTarget.style.transform = 'translateY(-6px)'; 
+                  e.currentTarget.style.boxShadow = '0 22px 55px rgba(15,37,87,0.08)'; 
                 }}
                 onMouseLeave={e => { 
                   e.currentTarget.style.transform = ''; 
                   e.currentTarget.style.boxShadow = ''; 
                 }}>
-                <div style={{ marginBottom: '1.15rem' }}>
-                  <item.Icon className="w-10 h-10 text-[#0A1F4A]" />
+                <div style={{ marginBottom: '1rem' }}>
+                  <item.Icon className="w-9 h-9 text-[#0A1F4A]" />
                 </div>
-                <h3 style={{ fontSize: '1.32rem', fontWeight: 700, color: '#0A1F4A', marginBottom: '0.65rem' }}>{item.title}</h3>
-                <p style={{ fontSize: '0.95rem', color: '#64748b', lineHeight: 1.65 }}>{item.text}</p>
+                <h3 style={{ fontSize: '1.22rem', fontWeight: 700, color: '#0A1F4A', marginBottom: '0.55rem' }}>{item.title}</h3>
+                <p style={{ fontSize: '0.92rem', color: '#64748b', lineHeight: 1.6 }}>{item.text}</p>
               </div>
             ))}
           </div>
@@ -232,16 +225,16 @@ export default function About() {
       </section>
 
       {/* OUR JOURNEY — Video Highlights */}
-      <section style={{ background: '#F8FAFC', padding: '4.75rem 0' }}>
+      <section style={{ background: '#F8FAFC', padding: '4rem 1rem' }}>
         <div className="max-w-6xl mx-auto px-6">
-          <div style={{ textAlign: 'center', marginBottom: '2.5rem' }} data-anim>
+          <div style={{ textAlign: 'center', marginBottom: '2.25rem' }} data-anim>
             <div style={{ color: '#10B981', fontSize: '0.72rem', fontWeight: 800, letterSpacing: '2.5px' }}>OUR JOURNEY</div>
-            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: '2.25rem', color: '#0A1F4A', marginTop: '0.45rem' }}>
+            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: '2.05rem', color: '#0A1F4A', marginTop: '0.4rem' }}>
               Watch Our Story
             </h2>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(460px, 1fr))', gap: '1.75rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '1.5rem' }}>
             {[
               { 
                 src: "https://www.youtube.com/embed/NDd1RtcnzIE", 
@@ -255,8 +248,8 @@ export default function About() {
               }
             ].map((video, i) => (
               <div key={i} data-anim style={{ 
-                background: 'white', borderRadius: 18, overflow: 'hidden', 
-                boxShadow: '0 15px 40px rgba(15,37,87,0.07)' 
+                background: 'white', borderRadius: 16, overflow: 'hidden', 
+                boxShadow: '0 12px 35px rgba(15,37,87,0.06)' 
               }}>
                 <div style={{ position: 'relative', paddingTop: '56.25%' }}>
                   <iframe 
@@ -266,9 +259,9 @@ export default function About() {
                     allowFullScreen
                   ></iframe>
                 </div>
-                <div style={{ padding: '1.35rem 1.5rem' }}>
-                  <h3 style={{ fontFamily: "'DM Serif Display', serif", fontSize: '1.1rem', color: '#0A1F4A' }}>{video.title}</h3>
-                  <p style={{ color: '#64748b', fontSize: '0.88rem', marginTop: '0.45rem', lineHeight: 1.55 }}>{video.desc}</p>
+                <div style={{ padding: '1.2rem 1.35rem' }}>
+                  <h3 style={{ fontFamily: "'DM Serif Display', serif", fontSize: '1.02rem', color: '#0A1F4A' }}>{video.title}</h3>
+                  <p style={{ color: '#64748b', fontSize: '0.85rem', marginTop: '0.4rem', lineHeight: 1.5 }}>{video.desc}</p>
                 </div>
               </div>
             ))}
@@ -277,14 +270,14 @@ export default function About() {
       </section>
 
       {/* MEET THE FOUNDERS */}
-      <section style={{ background: '#0A1F4A', color: 'white', padding: '5rem 0' }}>
+      <section style={{ background: '#0A1F4A', color: 'white', padding: '4.25rem 1rem' }}>
         <div className="max-w-6xl mx-auto px-6">
-          <div style={{ textAlign: 'center', marginBottom: '2.75rem' }} data-anim>
+          <div style={{ textAlign: 'center', marginBottom: '2.5rem' }} data-anim>
             <div style={{ color: '#10B981', fontSize: '0.72rem', fontWeight: 800, letterSpacing: '2.5px' }}>THE PEOPLE BEHIND THE PROMISE</div>
-            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: '2.35rem', marginTop: '0.5rem' }}>Meet the Founders</h2>
+            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: '2.15rem', marginTop: '0.45rem' }}>Meet the Founders</h2>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '1.85rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.65rem' }}>
             {[
               { 
                 img: 'https://picsum.photos/id/1005/700/700', 
@@ -301,20 +294,20 @@ export default function About() {
             ].map((person, i) => (
               <div key={i} data-anim style={{
                 background: 'rgba(255,255,255,0.06)',
-                borderRadius: 20,
+                borderRadius: 18,
                 overflow: 'hidden',
                 border: '1px solid rgba(255,255,255,0.1)',
                 transition: 'all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1)'
               }}
-                onMouseEnter={e => e.currentTarget.style.transform = 'translateY(-8px)'}
+                onMouseEnter={e => e.currentTarget.style.transform = 'translateY(-6px)'}
                 onMouseLeave={e => e.currentTarget.style.transform = ''}>
-                <div style={{ height: 280, overflow: 'hidden' }}>
+                <div style={{ height: 250, overflow: 'hidden' }}>
                   <img src={person.img} alt={person.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 </div>
-                <div style={{ padding: '1.9rem' }}>
-                  <h3 style={{ fontFamily: "'DM Serif Display', serif", fontSize: '1.35rem', marginBottom: '0.35rem' }}>{person.name}</h3>
-                  <div style={{ color: '#10B981', fontSize: '0.82rem', fontWeight: 700, marginBottom: '1rem' }}>{person.role}</div>
-                  <p style={{ fontSize: '0.92rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.65 }}>{person.desc}</p>
+                <div style={{ padding: '1.65rem' }}>
+                  <h3 style={{ fontFamily: "'DM Serif Display', serif", fontSize: '1.25rem', marginBottom: '0.3rem' }}>{person.name}</h3>
+                  <div style={{ color: '#10B981', fontSize: '0.78rem', fontWeight: 700, marginBottom: '0.85rem' }}>{person.role}</div>
+                  <p style={{ fontSize: '0.88rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.6 }}>{person.desc}</p>
                 </div>
               </div>
             ))}
@@ -323,27 +316,28 @@ export default function About() {
       </section>
 
       {/* CLOSING STATEMENT */}
-      <section style={{ background: 'white', padding: '5rem 0', textAlign: 'center' }}>
+      <section style={{ background: 'white', padding: '4.5rem 1rem', textAlign: 'center' }}>
         <div className="max-w-3xl mx-auto px-6" data-anim>
           <h2 style={{ 
             fontFamily: "'DM Serif Display', serif", 
-            fontSize: '2.1rem', 
+            fontSize: '1.95rem', 
             color: '#0A1F4A', 
             lineHeight: 1.35, 
-            maxWidth: 620, 
+            maxWidth: 580, 
             margin: '0 auto' 
           }}>
             We don’t position ourselves as sellers of insurance.<br />
             We position ourselves as partners in your claim journey.
           </h2>
-          <div style={{ width: 55, height: 3, background: '#10B981', margin: '1.85rem auto' }}></div>
-          <p style={{ color: '#64748b', fontSize: '1rem', lineHeight: 1.6 }}>
+          <div style={{ width: 50, height: 3, background: '#10B981', margin: '1.65rem auto' }}></div>
+          <p style={{ color: '#64748b', fontSize: '0.95rem', lineHeight: 1.55 }}>
             <strong>Rajat Kumar &amp; Dolly Kumar</strong><br />
             Founders, Insurewell Advisory
           </p>
         </div>
       </section>
-       <Footer />
+
+      <Footer />
       <WAFloat />
     </>
   );

@@ -19,7 +19,7 @@ const CLAIM_LINKS = [
   { label: 'File a Claim',              href: '/claims' },
   { label: 'Claim Stories',             href: '/claim-stories' },
   { label: 'Claim Rejection Guide',     href: '/faqs#rejection' },
-  { label: 'Cashless vs Reimbursement', href: '/faqs#cashless' },
+  { label: 'Cashless vs Reimbursement', href: '/faqs#cashless-vs-reimbursement' },
 ]
 
 export default function Navbar({ logged = false, onLogout = () => {} }) {
@@ -155,14 +155,14 @@ export default function Navbar({ logged = false, onLogout = () => {} }) {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu - Improved */}
       {mobileOpen && (
         <div className="lg:hidden bg-white border-t border-blue-100 shadow-lg">
           <div className="max-w-7xl mx-auto px-4 py-4 space-y-1">
             <div>
               <button
                 onClick={() => handleDropdown('m-health')}
-                className="w-full flex items-center justify-between px-3 py-2.5 text-sm font-medium text-ink rounded-lg hover:bg-blue-50"
+                className="w-full flex items-center justify-between px-3 py-3 text-sm font-medium text-ink rounded-lg hover:bg-blue-50"
               >
                 Health Insurance
                 <ChevronDown className={`w-4 h-4 transition-transform ${activeDropdown === 'm-health' ? 'rotate-180' : ''}`} />
@@ -171,7 +171,7 @@ export default function Navbar({ logged = false, onLogout = () => {} }) {
                 <div className="pl-4 mt-1 space-y-1">
                   {HEALTH_LINKS.map(link => (
                     <Link key={link.href} to={link.href}
-                      className="block px-3 py-2 text-sm text-muted hover:text-blue-500 rounded-lg hover:bg-blue-50">
+                      className="block px-3 py-2.5 text-sm text-muted hover:text-blue-500 rounded-lg hover:bg-blue-50">
                       {link.label}
                     </Link>
                   ))}
@@ -181,7 +181,7 @@ export default function Navbar({ logged = false, onLogout = () => {} }) {
             <div>
               <button
                 onClick={() => handleDropdown('m-claims')}
-                className="w-full flex items-center justify-between px-3 py-2.5 text-sm font-medium text-ink rounded-lg hover:bg-blue-50"
+                className="w-full flex items-center justify-between px-3 py-3 text-sm font-medium text-ink rounded-lg hover:bg-blue-50"
               >
                 Claims
                 <ChevronDown className={`w-4 h-4 transition-transform ${activeDropdown === 'm-claims' ? 'rotate-180' : ''}`} />
@@ -190,7 +190,7 @@ export default function Navbar({ logged = false, onLogout = () => {} }) {
                 <div className="pl-4 mt-1 space-y-1">
                   {CLAIM_LINKS.map(link => (
                     <Link key={link.href} to={link.href}
-                      className="block px-3 py-2 text-sm text-muted hover:text-blue-500 rounded-lg hover:bg-blue-50">
+                      className="block px-3 py-2.5 text-sm text-muted hover:text-blue-500 rounded-lg hover:bg-blue-50">
                       {link.label}
                     </Link>
                   ))}
@@ -203,17 +203,17 @@ export default function Navbar({ logged = false, onLogout = () => {} }) {
               { to: '/calculator',label: 'Calculator' },
             ].map(item => (
               <Link key={item.to} to={item.to}
-                className="block px-3 py-2.5 text-sm font-medium text-ink rounded-lg hover:bg-blue-50 hover:text-blue-500">
+                className="block px-3 py-3 text-sm font-medium text-ink rounded-lg hover:bg-blue-50 hover:text-blue-500">
                 {item.label}
               </Link>
             ))}
-            <div className="pt-3 flex flex-col gap-2">
+            <div className="pt-4 flex flex-col gap-2.5">
               <a href="https://wa.me/919217182171" target="_blank" rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 py-2.5 text-sm font-medium text-blue-500 bg-blue-50 rounded-lg border border-blue-200">
+                className="flex items-center justify-center gap-2 py-3 text-sm font-medium text-blue-500 bg-blue-50 rounded-lg border border-blue-200">
                 Chat on WhatsApp
               </a>
-              <a href="tel:+91 9217182171"
-                className="flex items-center justify-center gap-2 py-2.5 text-sm font-semibold text-white bg-blue-500 rounded-lg">
+              <a href="tel:+919217182171"
+                className="flex items-center justify-center gap-2 py-3 text-sm font-semibold text-white bg-blue-500 rounded-lg">
                 <Phone className="w-4 h-4" /> Book Free Call
               </a>
             </div>

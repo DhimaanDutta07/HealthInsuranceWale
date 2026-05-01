@@ -53,14 +53,15 @@ export default function FAQ() {
     <>
       <Navbar isLoggedIn={isLoggedIn} />
 
-      {/* HERO */}
+      {/* HERO - Mobile Friendly */}
       <section style={{
         background: 'linear-gradient(135deg, #0A1F4A 0%, #1E3A8A 50%, #0F2E6B 100%)',
         minHeight: '68vh',
         position: 'relative',
         overflow: 'hidden',
         display: 'flex',
-        alignItems: 'center'
+        alignItems: 'center',
+        padding: '2.5rem 1rem'
       }}>
         <div style={{
           position: 'absolute', inset: 0,
@@ -68,12 +69,12 @@ export default function FAQ() {
           backgroundSize: '48px 48px'
         }} />
 
-        <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 2rem', textAlign: 'center', position: 'relative', zIndex: 2 }}>
+        <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 1.5rem', textAlign: 'center', position: 'relative', zIndex: 2 }}>
           <div style={{
             display: 'inline-flex', alignItems: 'center', gap: 8,
             background: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(14px)',
             border: '1px solid rgba(255,255,255,0.2)', color: 'white',
-            fontSize: '0.75rem', fontWeight: 700, padding: '8px 22px', borderRadius: 9999, marginBottom: '1.75rem'
+            fontSize: '0.75rem', fontWeight: 700, padding: '8px 20px', borderRadius: 9999, marginBottom: '1.5rem'
           }}>
             <span style={{ width: 8, height: 8, background: '#10B981', borderRadius: '50%', animation: 'pulse 2s infinite' }}></span>
             CLEAR ANSWERS • CLAIM-FOCUSED
@@ -81,29 +82,29 @@ export default function FAQ() {
 
           <h1 style={{ 
             fontFamily: "'DM Serif Display', serif", 
-            fontSize: 'clamp(3rem, 6vw, 4.8rem)', 
-            lineHeight: 1.02, 
+            fontSize: 'clamp(2.6rem, 7vw, 4.5rem)', 
+            lineHeight: 1.05, 
             color: 'white', 
-            marginBottom: '1.35rem' 
+            marginBottom: '1.25rem' 
           }}>
             Frequently Asked Questions
           </h1>
 
           <p style={{ 
-            fontSize: '1.25rem', 
+            fontSize: '1.15rem', 
             color: 'rgba(255,255,255,0.78)', 
-            maxWidth: 640, 
+            maxWidth: 580, 
             margin: '0 auto', 
-            lineHeight: 1.65 
+            lineHeight: 1.6 
           }}>
             Everything you need to know about health insurance — explained simply and honestly.
           </p>
         </div>
       </section>
 
-      {/* FAQ LIST */}
-      <section style={{ background: '#F8FAFC', padding: '5.5rem 0' }}>
-        <div className="max-w-5xl mx-auto px-6">
+      {/* FAQ LIST - Mobile Friendly */}
+      <section style={{ background: '#F8FAFC', padding: '4rem 1rem' }}>
+        <div className="max-w-5xl mx-auto">
           <div style={{ maxWidth: 920, margin: '0 auto' }}>
             {faqs.map((faq, index) => (
               <div 
@@ -111,25 +112,25 @@ export default function FAQ() {
                 id={faq.id}
                 style={{
                   background: 'white',
-                  marginBottom: '1.25rem',
-                  borderRadius: 20,
+                  marginBottom: '1.1rem',
+                  borderRadius: 18,
                   border: '1px solid #e2e8f0',
                   overflow: 'hidden',
-                  boxShadow: '0 12px 35px rgba(15,37,87,0.06)'
+                  boxShadow: '0 10px 30px rgba(15,37,87,0.05)'
                 }}
               >
                 <button
                   onClick={() => toggleFaq(index)}
                   style={{
                     width: '100%',
-                    padding: '1.7rem 2.25rem',
+                    padding: '1.5rem 1.75rem',
                     textAlign: 'left',
                     background: 'none',
                     border: 'none',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'space-between',
-                    fontSize: '1.1rem',
+                    fontSize: '1.02rem',
                     fontWeight: 600,
                     color: '#0A1F4A',
                     cursor: 'pointer'
@@ -149,12 +150,12 @@ export default function FAQ() {
                   maxHeight: openIndex === index ? '600px' : '0',
                   overflow: 'hidden',
                   transition: 'all 0.4s ease',
-                  padding: openIndex === index ? '0 2.25rem 1.85rem' : '0 2.25rem'
+                  padding: openIndex === index ? '0 1.75rem 1.6rem' : '0 1.75rem'
                 }}>
                   <p style={{ 
                     color: '#334155', 
-                    lineHeight: 1.75, 
-                    fontSize: '1.02rem' 
+                    lineHeight: 1.7, 
+                    fontSize: '0.98rem' 
                   }}>
                     {faq.a}
                   </p>
@@ -163,27 +164,27 @@ export default function FAQ() {
             ))}
           </div>
 
-          {/* CTA */}
+          {/* CTA - Mobile Friendly */}
           <div style={{
-            marginTop: '5.5rem',
+            marginTop: '4.5rem',
             background: 'linear-gradient(135deg, #0A1F4A, #1E3A8A)',
-            borderRadius: 24,
-            padding: '3.75rem 2.5rem',
+            borderRadius: 22,
+            padding: '3rem 1.75rem',
             textAlign: 'center',
             color: 'white'
           }}>
-            <h3 style={{ fontFamily: "'DM Serif Display', serif", fontSize: '2.1rem', marginBottom: '1rem' }}>
+            <h3 style={{ fontFamily: "'DM Serif Display', serif", fontSize: '1.95rem', marginBottom: '1rem' }}>
               Still have questions?
             </h3>
-            <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.85)', maxWidth: 520, margin: '0 auto 2.25rem' }}>
+            <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.85)', maxWidth: 480, margin: '0 auto 2rem' }}>
               Speak directly with our claim-focused advisors. No sales pitch — only clear guidance.
             </p>
             <button style={{
               background: 'white',
               color: '#0A1F4A',
-              padding: '16px 44px',
+              padding: '14px 36px',
               borderRadius: 9999,
-              fontSize: '1.1rem',
+              fontSize: '1rem',
               fontWeight: 700,
               border: 'none',
               cursor: 'pointer'

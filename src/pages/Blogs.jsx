@@ -102,14 +102,15 @@ export default function Blogs() {
     <>
       <Navbar isLoggedIn={isLoggedIn} />
 
-      {/* HERO */}
+      {/* HERO - Mobile Friendly */}
       <section style={{
         background: 'linear-gradient(135deg, #0A1F4A 0%, #1E3A8A 50%, #0F2E6B 100%)',
-        minHeight: '70vh',
+        minHeight: '65vh',
         position: 'relative',
         overflow: 'hidden',
         display: 'flex',
-        alignItems: 'center'
+        alignItems: 'center',
+        padding: '2rem 1rem'
       }}>
         <div style={{
           position: 'absolute', inset: 0,
@@ -117,12 +118,12 @@ export default function Blogs() {
           backgroundSize: '48px 48px'
         }} />
 
-        <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 2rem', textAlign: 'center', position: 'relative', zIndex: 2 }}>
+        <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 1.5rem', textAlign: 'center', position: 'relative', zIndex: 2 }}>
           <div style={{
             display: 'inline-flex', alignItems: 'center', gap: 8,
             background: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(14px)',
             border: '1px solid rgba(255,255,255,0.2)', color: 'white',
-            fontSize: '0.75rem', fontWeight: 700, padding: '8px 22px', borderRadius: 9999, marginBottom: '1.75rem'
+            fontSize: '0.75rem', fontWeight: 700, padding: '8px 20px', borderRadius: 9999, marginBottom: '1.5rem'
           }}>
             <span style={{ width: 8, height: 8, background: '#10B981', borderRadius: '50%', animation: 'pulse 2s infinite' }}></span>
             CLAIM-FOCUSED INSURANCE KNOWLEDGE
@@ -130,20 +131,20 @@ export default function Blogs() {
 
           <h1 style={{ 
             fontFamily: "'DM Serif Display', serif", 
-            fontSize: 'clamp(3.1rem, 6.2vw, 5.1rem)', 
-            lineHeight: 1.02, 
+            fontSize: 'clamp(2.7rem, 7vw, 4.8rem)', 
+            lineHeight: 1.05, 
             color: 'white', 
-            marginBottom: '1.35rem' 
+            marginBottom: '1.15rem' 
           }}>
             Our Blog
           </h1>
 
           <p style={{ 
-            fontSize: '1.25rem', 
+            fontSize: '1.15rem', 
             color: 'rgba(255,255,255,0.78)', 
-            maxWidth: 680, 
+            maxWidth: 560, 
             margin: '0 auto', 
-            lineHeight: 1.65 
+            lineHeight: 1.6 
           }}>
             Practical, honest, and claim-focused insights to help you make better insurance decisions.
           </p>
@@ -151,21 +152,21 @@ export default function Blogs() {
       </section>
 
       {/* BLOG SECTION */}
-      <section style={{ background: '#F8FAFC', padding: '5.5rem 0' }}>
+      <section style={{ background: '#F8FAFC', padding: '4.5rem 1rem' }}>
         <div className="max-w-6xl mx-auto px-6">
 
-          {/* Category Filter */}
-          <div data-anim style={{ marginBottom: '3.5rem' }}>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', justifyContent: 'center' }}>
+          {/* Category Filter - Mobile Friendly */}
+          <div data-anim style={{ marginBottom: '3rem' }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', justifyContent: 'center' }}>
               {categories.map(cat => (
                 <button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
                   style={{
-                    padding: '13px 30px',
+                    padding: '11px 24px',
                     borderRadius: 9999,
                     fontWeight: 600,
-                    fontSize: '0.95rem',
+                    fontSize: '0.9rem',
                     background: activeCategory === cat ? '#0A1F4A' : 'white',
                     color: activeCategory === cat ? 'white' : '#334155',
                     border: '1px solid #e2e8f0',
@@ -179,11 +180,11 @@ export default function Blogs() {
             </div>
           </div>
 
-          {/* Blog Grid */}
+          {/* Blog Grid - Mobile Friendly */}
           <div style={{ 
             display: 'grid', 
-            gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))', 
-            gap: '2.25rem' 
+            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
+            gap: '1.75rem' 
           }}>
             {filteredPosts.map((post, index) => (
               <div 
@@ -191,14 +192,14 @@ export default function Blogs() {
                 data-anim
                 style={{
                   background: 'white',
-                  borderRadius: 22,
+                  borderRadius: 20,
                   overflow: 'hidden',
                   border: '1px solid #e2e8f0',
-                  boxShadow: '0 18px 50px rgba(15,37,87,0.07)',
+                  boxShadow: '0 15px 45px rgba(15,37,87,0.06)',
                   transition: 'all 0.4s cubic-bezier(0.25,0.46,0.45,0.94)'
                 }}
               >
-                <div style={{ height: 230, overflow: 'hidden' }}>
+                <div style={{ height: 210, overflow: 'hidden' }}>
                   <img 
                     src={post.image} 
                     alt={post.title}
@@ -206,28 +207,28 @@ export default function Blogs() {
                   />
                 </div>
 
-                <div style={{ padding: '1.9rem' }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.1rem' }}>
+                <div style={{ padding: '1.65rem' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.95rem' }}>
                     <span style={{ 
-                      fontSize: '0.78rem', 
+                      fontSize: '0.75rem', 
                       fontWeight: 700, 
                       color: '#10B981',
                       background: '#ECFDF5',
-                      padding: '3px 11px',
+                      padding: '2px 10px',
                       borderRadius: 50
                     }}>
                       {post.category}
                     </span>
-                    <span style={{ fontSize: '0.82rem', color: '#64748b' }}>
+                    <span style={{ fontSize: '0.8rem', color: '#64748b' }}>
                       {post.readTime}
                     </span>
                   </div>
 
                   <h3 style={{ 
                     fontFamily: "'DM Serif Display', serif", 
-                    fontSize: '1.38rem', 
+                    fontSize: '1.28rem', 
                     lineHeight: 1.25, 
-                    marginBottom: '1rem',
+                    marginBottom: '0.9rem',
                     color: '#0A1F4A'
                   }}>
                     {post.title}
@@ -235,23 +236,23 @@ export default function Blogs() {
 
                   <p style={{ 
                     color: '#64748b', 
-                    lineHeight: 1.65, 
-                    marginBottom: '1.6rem',
-                    fontSize: '0.95rem'
+                    lineHeight: 1.6, 
+                    marginBottom: '1.4rem',
+                    fontSize: '0.92rem'
                   }}>
                     {post.excerpt}
                   </p>
 
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <span style={{ fontSize: '0.85rem', color: '#64748b' }}>
+                    <span style={{ fontSize: '0.82rem', color: '#64748b' }}>
                       {post.date}
                     </span>
                     <button style={{
                       background: '#10B981',
                       color: 'white',
-                      padding: '11px 26px',
+                      padding: '10px 22px',
                       borderRadius: 9999,
-                      fontSize: '0.92rem',
+                      fontSize: '0.88rem',
                       fontWeight: 700,
                       border: 'none',
                       cursor: 'pointer'
@@ -264,27 +265,27 @@ export default function Blogs() {
             ))}
           </div>
 
-          {/* CTA Section */}
+          {/* CTA Section - Mobile Friendly */}
           <div data-anim style={{
-            marginTop: '6rem',
+            marginTop: '5rem',
             background: 'linear-gradient(135deg, #0A1F4A, #1E3A8A)',
-            borderRadius: 24,
-            padding: '3.75rem 2.5rem',
+            borderRadius: 22,
+            padding: '3.25rem 2rem',
             textAlign: 'center',
             color: 'white'
           }}>
-            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: '2.3rem', marginBottom: '1rem' }}>
+            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: '2.1rem', marginBottom: '0.9rem' }}>
               Want personalized insurance advice?
             </h2>
-            <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.85)', maxWidth: 580, margin: '0 auto 2.25rem' }}>
+            <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.85)', maxWidth: 480, margin: '0 auto 1.9rem' }}>
               Speak to our claim-focused advisors. No sales pitch — only honest guidance.
             </p>
             <button style={{
               background: 'white',
               color: '#0A1F4A',
-              padding: '16px 42px',
+              padding: '14px 36px',
               borderRadius: 9999,
-              fontSize: '1.1rem',
+              fontSize: '1rem',
               fontWeight: 700,
               border: 'none',
               cursor: 'pointer'
@@ -295,8 +296,8 @@ export default function Blogs() {
 
         </div>
       </section>
-       <Footer />
 
+      <Footer />
       <WAFloat />
     </>
   );

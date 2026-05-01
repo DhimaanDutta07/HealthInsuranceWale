@@ -33,49 +33,53 @@ export default function TermInsuranceCalculator() {
         <div style={{ background: '#F8FAFC', minHeight: '100vh' }}>
             <Navbar />
 
-            {/* HERO */}
+            {/* HERO - Mobile Friendly */}
             <header style={{
                 background: 'linear-gradient(135deg, #0A1F4A 0%, #1E3A8A 50%, #0F2E6B 100%)',
                 color: 'white',
-                padding: '4.5rem 2rem',
+                padding: '3.75rem 1.25rem',
                 textAlign: 'center'
             }}>
                 <h1 style={{ 
                     fontFamily: "'DM Serif Display', serif", 
-                    fontSize: 'clamp(2.6rem, 5.5vw, 3.8rem)', 
-                    marginBottom: '1rem' 
+                    fontSize: 'clamp(2.3rem, 6.5vw, 3.6rem)', 
+                    marginBottom: '0.9rem' 
                 }}>
                     Human Life Value Calculator
                 </h1>
                 <p style={{ 
-                    fontSize: '1.2rem', 
+                    fontSize: '1.05rem', 
                     color: 'rgba(255,255,255,0.8)', 
-                    maxWidth: 620, 
+                    maxWidth: 520, 
                     margin: '0 auto' 
                 }}>
                     Go beyond basic estimates. Factor in your lifestyle and liabilities for a precision quote.
                 </p>
             </header>
 
-            <main style={{ maxWidth: 1180, margin: '-3.5rem auto 4rem', padding: '0 2rem' }}>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '2rem' }}>
+            <main style={{ maxWidth: 1100, margin: '-3rem auto 4rem', padding: '0 1.25rem' }}>
+                <div style={{ 
+                    display: 'grid', 
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
+                    gap: '1.75rem' 
+                }}>
 
                     {/* LEFT: INPUTS */}
                     <div style={{
                         background: 'white',
-                        borderRadius: 24,
-                        padding: '2.75rem',
+                        borderRadius: 20,
+                        padding: '2.25rem 1.85rem',
                         border: '1px solid #e2e8f0',
-                        boxShadow: '0 15px 40px rgba(15,37,87,0.06)'
+                        boxShadow: '0 12px 35px rgba(15,37,87,0.05)'
                     }}>
-                        <h3 style={{ marginBottom: '2rem', color: '#0A1F4A', fontSize: '1.45rem' }}>Financial Details</h3>
+                        <h3 style={{ marginBottom: '1.75rem', color: '#0A1F4A', fontSize: '1.3rem' }}>Financial Details</h3>
 
                         {/* Monthly Expenses */}
-                        <div style={{ marginBottom: '2rem' }}>
-                            <label style={{ display: 'flex', justifyContent: 'space-between', fontWeight: 600, color: '#0A1F4A', marginBottom: '0.5rem' }}>
+                        <div style={{ marginBottom: '1.75rem' }}>
+                            <label style={{ display: 'flex', justifyContent: 'space-between', fontWeight: 600, color: '#0A1F4A', marginBottom: '0.45rem' }}>
                                 Monthly Household Expenses <span>₹{inputs.monthlyExpenses.toLocaleString()}</span>
                             </label>
-                            <p style={{ fontSize: '0.85rem', color: '#64748b', marginBottom: '0.8rem', lineHeight: 1.5 }}>
+                            <p style={{ fontSize: '0.82rem', color: '#64748b', marginBottom: '0.7rem', lineHeight: 1.5 }}>
                                 Include groceries, rent/EMI, school fees, and utility bills.
                             </p>
                             <input
@@ -83,16 +87,16 @@ export default function TermInsuranceCalculator() {
                                 name="monthlyExpenses"
                                 value={inputs.monthlyExpenses}
                                 onChange={handleChange}
-                                style={{ width: '100%', padding: '13px 16px', borderRadius: 12, border: '1px solid #e2e8f0', fontSize: '1rem' }}
+                                style={{ width: '100%', padding: '12px 15px', borderRadius: 11, border: '1px solid #e2e8f0', fontSize: '1rem' }}
                             />
                         </div>
 
                         {/* Outstanding Loans */}
-                        <div style={{ marginBottom: '2rem' }}>
-                            <label style={{ display: 'flex', justifyContent: 'space-between', fontWeight: 600, color: '#0A1F4A', marginBottom: '0.5rem' }}>
+                        <div style={{ marginBottom: '1.75rem' }}>
+                            <label style={{ display: 'flex', justifyContent: 'space-between', fontWeight: 600, color: '#0A1F4A', marginBottom: '0.45rem' }}>
                                 Total Outstanding Loans <span>₹{inputs.outstandingLoans.toLocaleString()}</span>
                             </label>
-                            <p style={{ fontSize: '0.85rem', color: '#64748b', marginBottom: '0.8rem', lineHeight: 1.5 }}>
+                            <p style={{ fontSize: '0.82rem', color: '#64748b', marginBottom: '0.7rem', lineHeight: 1.5 }}>
                                 Home loans, car loans, or personal debts.
                             </p>
                             <input
@@ -101,15 +105,15 @@ export default function TermInsuranceCalculator() {
                                 value={inputs.outstandingLoans}
                                 onChange={handleChange}
                                 placeholder="e.g. 5000000"
-                                style={{ width: '100%', padding: '13px 16px', borderRadius: 12, border: '1px solid #e2e8f0', fontSize: '1rem' }}
+                                style={{ width: '100%', padding: '12px 15px', borderRadius: 11, border: '1px solid #e2e8f0', fontSize: '1rem' }}
                             />
                         </div>
 
-                        <hr style={{ border: 'none', borderTop: '1px solid #e2e8f0', margin: '2rem 0' }} />
+                        <hr style={{ border: 'none', borderTop: '1px solid #e2e8f0', margin: '1.75rem 0' }} />
 
                         {/* Coverage Slider */}
-                        <div style={{ marginBottom: '2rem' }}>
-                            <label style={{ display: 'flex', justifyContent: 'space-between', fontWeight: 600, color: '#0A1F4A', marginBottom: '0.5rem' }}>
+                        <div style={{ marginBottom: '1.75rem' }}>
+                            <label style={{ display: 'flex', justifyContent: 'space-between', fontWeight: 600, color: '#0A1F4A', marginBottom: '0.45rem' }}>
                                 Life Cover Amount <span>₹ {(inputs.coverage / 10000000).toFixed(1)} Cr</span>
                             </label>
                             <input
@@ -119,14 +123,14 @@ export default function TermInsuranceCalculator() {
                             />
                         </div>
 
-                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem' }}>
+                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.1rem' }}>
                             <div>
-                                <label style={{ fontWeight: 600, color: '#0A1F4A', marginBottom: '0.5rem', display: 'block' }}>Current Age</label>
-                                <input type="number" name="age" value={inputs.age} onChange={handleChange} style={{ width: '100%', padding: '13px 16px', borderRadius: 12, border: '1px solid #e2e8f0', fontSize: '1rem' }} />
+                                <label style={{ fontWeight: 600, color: '#0A1F4A', marginBottom: '0.45rem', display: 'block' }}>Current Age</label>
+                                <input type="number" name="age" value={inputs.age} onChange={handleChange} style={{ width: '100%', padding: '12px 15px', borderRadius: 11, border: '1px solid #e2e8f0', fontSize: '1rem' }} />
                             </div>
                             <div>
-                                <label style={{ fontWeight: 600, color: '#0A1F4A', marginBottom: '0.5rem', display: 'block' }}>Tobacco?</label>
-                                <select name="tobacco" value={inputs.tobacco} onChange={handleChange} style={{ width: '100%', padding: '13px 16px', borderRadius: 12, border: '1px solid #e2e8f0', fontSize: '1rem' }}>
+                                <label style={{ fontWeight: 600, color: '#0A1F4A', marginBottom: '0.45rem', display: 'block' }}>Tobacco?</label>
+                                <select name="tobacco" value={inputs.tobacco} onChange={handleChange} style={{ width: '100%', padding: '12px 15px', borderRadius: 11, border: '1px solid #e2e8f0', fontSize: '1rem' }}>
                                     <option value="no">Non-Smoker</option>
                                     <option value="yes">Smoker</option>
                                 </select>
@@ -138,23 +142,23 @@ export default function TermInsuranceCalculator() {
                     <div style={{
                         background: 'linear-gradient(135deg, #0A1F4A 0%, #1E3A8A 100%)',
                         color: 'white',
-                        borderRadius: 24,
-                        padding: '2.75rem',
+                        borderRadius: 22,
+                        padding: '2.25rem 1.85rem',
                         position: 'sticky',
-                        top: '100px',
+                        top: '90px',
                         height: 'fit-content',
-                        boxShadow: '0 20px 60px rgba(15,37,87,0.15)'
+                        boxShadow: '0 18px 50px rgba(15,37,87,0.12)'
                     }}>
-                        <p style={{ textTransform: 'uppercase', letterSpacing: '2px', fontSize: '0.8rem', opacity: 0.7, marginBottom: '0.75rem' }}>
+                        <p style={{ textTransform: 'uppercase', letterSpacing: '2px', fontSize: '0.75rem', opacity: 0.7, marginBottom: '0.65rem' }}>
                             ESTIMATED MONTHLY PREMIUM
                         </p>
-                        <h2 style={{ fontSize: '3.6rem', margin: '0.75rem 0', fontFamily: "'DM Serif Display', serif" }}>
+                        <h2 style={{ fontSize: '3.3rem', margin: '0.6rem 0', fontFamily: "'DM Serif Display', serif" }}>
                             ₹{estimate.toLocaleString()}*
                         </h2>
 
-                        <div style={{ background: 'rgba(255,255,255,0.08)', padding: '1.65rem', borderRadius: 16, marginTop: '1.5rem', marginBottom: '2rem' }}>
-                            <p style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '0.65rem', color: '#10B981' }}>Why this amount?</p>
-                            <p style={{ fontSize: '0.9rem', opacity: 0.85, lineHeight: 1.6 }}>
+                        <div style={{ background: 'rgba(255,255,255,0.08)', padding: '1.45rem', borderRadius: 14, marginTop: '1.3rem', marginBottom: '1.85rem' }}>
+                            <p style={{ fontSize: '0.85rem', fontWeight: 600, marginBottom: '0.55rem', color: '#10B981' }}>Why this amount?</p>
+                            <p style={{ fontSize: '0.85rem', opacity: 0.85, lineHeight: 1.55 }}>
                                 Based on your <strong>₹{inputs.outstandingLoans.toLocaleString()}</strong> in debt and <strong>₹{inputs.monthlyExpenses.toLocaleString()}</strong> monthly spend,
                                 a cover of <strong>₹{(inputs.coverage / 10000000).toFixed(1)} Cr</strong> is recommended for 100% debt-freedom for your family.
                             </p>
@@ -162,23 +166,23 @@ export default function TermInsuranceCalculator() {
 
                         <button style={{
                             width: '100%',
-                            padding: '17px',
-                            borderRadius: 14,
+                            padding: '15px',
+                            borderRadius: 12,
                             border: 'none',
                             background: '#10B981',
                             color: 'white',
                             fontWeight: 700,
-                            fontSize: '1.05rem',
+                            fontSize: '1rem',
                             cursor: 'pointer',
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'center',
-                            gap: 10
+                            gap: 9
                         }}>
                             Book a Consultation <ArrowRight className="w-5 h-5" />
                         </button>
 
-                        <p style={{ fontSize: '0.75rem', opacity: 0.6, marginTop: '1.25rem', textAlign: 'center' }}>
+                        <p style={{ fontSize: '0.72rem', opacity: 0.55, marginTop: '1.1rem', textAlign: 'center' }}>
                             *Estimate only. Final premium may vary.
                         </p>
                     </div>

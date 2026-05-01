@@ -43,11 +43,11 @@ export default function Home() {
     <>
       <Navbar isLoggedIn={isLoggedIn} />
 
-      {/* HERO — EXACT AS PROVIDED */}
+      {/* HERO — Mobile Friendly */}
       <section style={{
         background: 'linear-gradient(135deg,var(--navy) 0%,#1A3A7A 55%,#0F3460 100%)',
         minHeight: '92vh', position: 'relative', overflow: 'hidden',
-        display: 'flex', alignItems: 'center'
+        display: 'flex', alignItems: 'center', padding: '2rem 1rem'
       }}>
         <div style={{
           position: 'absolute', inset: 0,
@@ -56,8 +56,8 @@ export default function Home() {
         }}></div>
 
         <div style={{
-          maxWidth: 1280, margin: '0 auto', padding: '5rem 2rem',
-          display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem',
+          maxWidth: 1280, margin: '0 auto', padding: '3rem 1.5rem',
+          display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem',
           alignItems: 'center', position: 'relative', zIndex: 1, width: '100%'
         }} className="hero-inner-grid">
           <div>
@@ -66,29 +66,27 @@ export default function Home() {
               background: 'rgba(255,255,255,0.12)', backdropFilter: 'blur(10px)',
               border: '1px solid rgba(255,255,255,0.2)', color: 'white',
               fontSize: '0.78rem', fontWeight: 500, padding: '6px 16px', borderRadius: 50,
-              marginBottom: '1.5rem', animation: 'fadeUp 0.7s 0.2s both'
+              marginBottom: '1.5rem'
             }}>
               <span style={{ width: 7, height: 7, background: '#4ADE80', borderRadius: '50%', animation: 'pulse 1.5s infinite' }}></span>
               IRDAI Approved · Trusted by 4,000+ Families
             </div>
 
             <h2 style={{
-              fontFamily: "'DM Serif Display',serif", fontSize: 'clamp(2.4rem,5vw,4rem)',
-              lineHeight: 1.1, color: 'white', marginBottom: '1.2rem',
-              animation: 'fadeUp 0.7s 0.35s both'
+              fontFamily: "'DM Serif Display',serif", fontSize: 'clamp(2.3rem,6vw,4rem)',
+              lineHeight: 1.1, color: 'white', marginBottom: '1.2rem'
             }}>
               Insurance Tab Kaam Aata Hai<br /><span style={{ color: 'var(--teal)' }}>Jab Claim Milta Hai.</span>
             </h2>
-            <p style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.75, marginBottom: '2.5rem', maxWidth: 480, animation: 'fadeUp 0.7s 0.5s both' }}>
+            <p style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.75, marginBottom: '2.5rem', maxWidth: 480 }}>
               At HealthInsuranceWale, we don't just help you choose a policy — we ensure you are supported at every step during claims.
             </p>
 
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, animation: 'fadeUp 0.7s 0.65s both' }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12 }}>
               <button onClick={() => handleBookCall()} style={{
                 display: 'flex', alignItems: 'center', gap: 10, padding: '14px 28px',
                 background: 'white', color: 'var(--navy)', borderRadius: 50, fontSize: '1rem',
-                fontWeight: 700, border: 'none', cursor: 'pointer', boxShadow: '0 4px 20px rgba(0,0,0,0.2)',
-                transition: 'all 0.25s'
+                fontWeight: 700, border: 'none', cursor: 'pointer', boxShadow: '0 4px 20px rgba(0,0,0,0.2)'
               }}>
                 <i className="fas fa-headset"></i> Book a free call
               </button>
@@ -101,7 +99,7 @@ export default function Home() {
               </button>
             </div>
 
-            <div style={{ display: 'flex', gap: '2rem', marginTop: '2.5rem', animation: 'fadeUp 0.7s 0.8s both', flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', gap: '2rem', marginTop: '2.5rem', flexWrap: 'wrap' }}>
               <div><div style={{ fontSize: '1.7rem', fontWeight: 800, color: 'white' }}>4K+</div><div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.6)', marginTop: 2 }}>Families Guided</div></div>
               <div style={{ width: 1, background: 'rgba(255,255,255,0.2)' }}></div>
               <div><div style={{ fontSize: '1.7rem', fontWeight: 800, color: 'white' }}>₹6 Cr+</div><div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.6)', marginTop: 2 }}>Claims Assisted</div></div>
@@ -110,7 +108,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div style={{ display: 'flex', justifyContent: 'flex-end', animation: 'fadeLeft 0.8s 0.4s both' }} className="hero-card-wrap">
+          <div style={{ display: 'flex', justifyContent: 'flex-end' }} className="hero-card-wrap">
             <div style={{
               background: 'rgba(255,255,255,0.97)', borderRadius: 24, padding: '2rem',
               maxWidth: 340, width: '100%', boxShadow: '0 30px 60px rgba(0,0,0,0.3)', position: 'relative'
@@ -144,7 +142,7 @@ export default function Home() {
         </div>
         <style>{`
           @keyframes fadeLeft { from{opacity:0;transform:translateX(40px)} to{opacity:1;transform:translateX(0)} }
-          @media(max-width:900px){.hero-inner-grid{grid-template-columns:1fr!important}.hero-card-wrap{display:none!important}}
+          @media(max-width:900px){.hero-inner-grid{grid-template-columns:1fr!important;gap:3rem!important}.hero-card-wrap{display:none!important}}
         `}</style>
       </section>
 

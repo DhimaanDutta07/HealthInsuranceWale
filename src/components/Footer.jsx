@@ -49,20 +49,20 @@ export default function Footer({ onOpenModal }) {
     <footer style={{ 
       background: 'linear-gradient(135deg, #0A1F4A 0%, #0F2E6B 100%)', 
       color: 'rgba(255,255,255,0.8)', 
-      paddingTop: '4rem',
+      paddingTop: '3.5rem',
       position: 'relative'
     }}>
       <div className="max-w-7xl mx-auto px-6">
         
-        {/* Top Brand + CTA Section */}
+        {/* Top Brand + CTA Section - Mobile Friendly */}
         <div style={{ 
           display: 'grid', 
-          gridTemplateColumns: '1.8fr 1fr', 
-          gap: '4rem', 
+          gridTemplateColumns: '1fr', 
+          gap: '2.5rem', 
           alignItems: 'center',
-          paddingBottom: '3.5rem',
+          paddingBottom: '2.5rem',
           borderBottom: '1px solid rgba(255,255,255,0.08)'
-        }}>
+        }} className="footer-top-grid">
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: '1.25rem' }}>
               <img 
@@ -94,7 +94,7 @@ export default function Footer({ onOpenModal }) {
           </div>
 
           {/* Big WhatsApp CTA */}
-          <div style={{ textAlign: 'right' }}>
+          <div style={{ textAlign: 'left' }} className="footer-cta">
             <button 
               onClick={handleWhatsApp}
               style={{
@@ -122,12 +122,12 @@ export default function Footer({ onOpenModal }) {
           </div>
         </div>
 
-        {/* Links + Agency Codes */}
+        {/* Links + Agency Codes - Mobile Friendly */}
         <div style={{ 
           display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', 
-          gap: '3rem', 
-          padding: '3.5rem 0' 
+          gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', 
+          gap: '2.5rem', 
+          padding: '3rem 0' 
         }}>
           
           <FooterCol title="Company" links={[
@@ -150,27 +150,24 @@ export default function Footer({ onOpenModal }) {
               fontWeight: 700, 
               color: '#10B981', 
               letterSpacing: '2px', 
-              marginBottom: '1.25rem',
+              marginBottom: '1.1rem',
               textTransform: 'uppercase'
             }}>
               Support
             </h5>
-            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
+            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
               <li><Link to="/claims" style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.95rem' }}>Claims Assistance</Link></li>
               <li>
-                <button 
-                  onClick={() => onOpenModal?.('call')} 
+                <a 
+                  href="/services" 
                   style={{ 
-                    background: 'none', 
-                    border: 'none', 
                     color: 'rgba(255,255,255,0.7)', 
-                    fontSize: '0.95rem', 
-                    cursor: 'pointer', 
-                    padding: 0 
+                    fontSize: '0.95rem',
+                    textDecoration: 'none'
                   }}
                 >
                   Book Free Consultation
-                </button>
+                </a>
               </li>
               <li><a href="https://abha.gov.in" target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.95rem' }}>ABHA Health ID</a></li>
               <li><a href="https://bimabharosa.irdai.gov.in/" target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.95rem' }}>Bima Bharosa Portal</a></li>
@@ -184,7 +181,7 @@ export default function Footer({ onOpenModal }) {
               fontWeight: 700, 
               color: '#10B981', 
               letterSpacing: '2px', 
-              marginBottom: '1.25rem',
+              marginBottom: '1.1rem',
               textTransform: 'uppercase'
             }}>
               Our Agency Codes
@@ -192,10 +189,10 @@ export default function Footer({ onOpenModal }) {
             <div style={{ 
               display: 'flex', 
               flexDirection: 'column', 
-              gap: '0.6rem',
-              maxHeight: '180px',
+              gap: '0.55rem',
+              maxHeight: '170px',
               overflowY: 'auto',
-              paddingRight: '8px'
+              paddingRight: '6px'
             }}>
               {AGENCY_CODES.map((item, index) => (
                 <div 
@@ -203,9 +200,9 @@ export default function Footer({ onOpenModal }) {
                   style={{
                     background: 'rgba(255,255,255,0.06)',
                     border: '1px solid rgba(255,255,255,0.1)',
-                    borderRadius: '12px',
-                    padding: '10px 16px',
-                    fontSize: '0.85rem',
+                    borderRadius: '10px',
+                    padding: '9px 14px',
+                    fontSize: '0.82rem',
                     display: 'flex',
                     justifyContent: 'space-between',
                     alignItems: 'center',
@@ -221,10 +218,10 @@ export default function Footer({ onOpenModal }) {
                   <span style={{ 
                     fontFamily: 'monospace', 
                     color: 'rgba(255,255,255,0.9)', 
-                    fontSize: '0.8rem',
+                    fontSize: '0.75rem',
                     background: 'rgba(255,255,255,0.08)',
-                    padding: '2px 8px',
-                    borderRadius: '6px'
+                    padding: '1px 7px',
+                    borderRadius: '5px'
                   }}>
                     {item.code}
                   </span>
@@ -237,34 +234,47 @@ export default function Footer({ onOpenModal }) {
         {/* IRDAI Disclaimer */}
         <div style={{ 
           borderTop: '1px solid rgba(255,255,255,0.08)', 
-          padding: '2rem 0 1.5rem' 
+          padding: '1.75rem 0 1.25rem' 
         }}>
           <p style={{ 
-            fontSize: '0.75rem', 
+            fontSize: '0.72rem', 
             color: 'rgba(255,255,255,0.5)', 
-            lineHeight: 1.8,
+            lineHeight: 1.7,
             maxWidth: '820px'
           }}>
             <span style={{ color: 'rgba(255,255,255,0.65)', fontWeight: 600 }}>IRDAI Disclaimer:</span> HealthInsuranceWale.com is a platform powered by Insurewell Advisory for providing health insurance advisory services. We do not represent any specific insurance company. All insurance products are subject to terms, conditions, and exclusions as per the respective insurer. Please read policy documents carefully before purchase.
           </p>
         </div>
 
-        {/* Bottom Bar */}
+        {/* Bottom Bar - Mobile Friendly */}
         <div style={{
           borderTop: '1px solid rgba(255,255,255,0.08)',
-          padding: '1.75rem 0',
+          padding: '1.5rem 0',
           display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          flexWrap: 'wrap',
-          gap: '1rem',
-          fontSize: '0.8rem',
+          flexDirection: 'column',
+          gap: '0.75rem',
+          fontSize: '0.78rem',
           color: 'rgba(255,255,255,0.45)'
-        }}>
+        }} className="footer-bottom">
           <div>© 2026 Insurewell Advisory · All Rights Reserved</div>
           <div>IRDAI Registration No. · CIN: U66000MH2018PTC000000</div>
         </div>
       </div>
+
+      <style>{`
+        @media (min-width: 768px) {
+          .footer-top-grid {
+            grid-template-columns: 1.8fr 1fr !important;
+          }
+          .footer-cta {
+            text-align: right !important;
+          }
+          .footer-bottom {
+            flex-direction: row !important;
+            justify-content: space-between !important;
+          }
+        }
+      `}</style>
     </footer>
   );
 }
@@ -277,12 +287,12 @@ function FooterCol({ title, links }) {
         fontWeight: 700, 
         color: '#10B981', 
         letterSpacing: '2px', 
-        marginBottom: '1.25rem',
+        marginBottom: '1.1rem',
         textTransform: 'uppercase'
       }}>
         {title}
       </h5>
-      <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
+      <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
         {links.map((link, index) => (
           <li key={index}>
             <Link 

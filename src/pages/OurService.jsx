@@ -7,6 +7,8 @@ import { ArrowRight } from 'lucide-react';
 export default function Services() {
   const { isLoggedIn } = useAuthStore();
 
+  const whatsappNumber = "919217182171";
+
   const services = [
     {
       id: 1,
@@ -18,7 +20,8 @@ export default function Services() {
         "Coverage recommendation based on your profile",
         "Claim-focused selection"
       ],
-      cta: "Talk to an Expert"
+      cta: "Talk to an Expert",
+      whatsappMessage: "Hi, I want to discuss new health insurance policy options."
     },
     {
       id: 2,
@@ -30,7 +33,8 @@ export default function Services() {
         "Better coverage options",
         "Improved claim experience"
       ],
-      cta: "Explore Better Options"
+      cta: "Explore Better Options",
+      whatsappMessage: "Hi, I want to know more about policy portability."
     },
     {
       id: 3,
@@ -45,6 +49,7 @@ export default function Services() {
         "Reimbursement assistance"
       ],
       cta: "Get Claim Support",
+      whatsappMessage: "Hi, I need help with my health insurance claim.",
       highlight: true
     },
     {
@@ -57,7 +62,8 @@ export default function Services() {
         "Higher coverage structuring",
         "Long-term claim readiness"
       ],
-      cta: "Plan Your Coverage"
+      cta: "Plan Your Coverage",
+      whatsappMessage: "Hi, I want to plan health insurance for my family and parents."
     },
     {
       id: 5,
@@ -69,7 +75,8 @@ export default function Services() {
         "Employee wellness integration",
         "Dedicated claim support for teams"
       ],
-      cta: "Talk to B2B Team"
+      cta: "Talk to B2B Team",
+      whatsappMessage: "Hi, I want to discuss group health insurance for my company."
     }
   ];
 
@@ -77,12 +84,13 @@ export default function Services() {
     <>
       <Navbar isLoggedIn={isLoggedIn} />
 
-      {/* HERO */}
+      {/* HERO - Mobile Friendly */}
       <section style={{
         background: 'linear-gradient(135deg, #0A1F4A 0%, #1E3A8A 50%, #0F2E6B 100%)',
         minHeight: '65vh',
         display: 'flex',
         alignItems: 'center',
+        padding: '2.5rem 1rem',
         position: 'relative',
         overflow: 'hidden'
       }}>
@@ -92,30 +100,30 @@ export default function Services() {
           backgroundSize: '48px 48px'
         }} />
 
-        <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 2rem', textAlign: 'center', position: 'relative', zIndex: 2 }}>
+        <div style={{ maxWidth: 1280, margin: '0 auto', textAlign: 'center', position: 'relative', zIndex: 2 }}>
           <div style={{
             display: 'inline-flex', alignItems: 'center', gap: 8,
             background: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(14px)',
             border: '1px solid rgba(255,255,255,0.2)', color: 'white',
-            fontSize: '0.75rem', fontWeight: 700, padding: '8px 22px', borderRadius: 9999, marginBottom: '1.5rem'
+            fontSize: '0.75rem', fontWeight: 700, padding: '8px 20px', borderRadius: 9999, marginBottom: '1.5rem'
           }}>
             OUR SERVICES
           </div>
 
           <h1 style={{ 
             fontFamily: "'DM Serif Display', serif", 
-            fontSize: 'clamp(3rem, 6vw, 4.8rem)', 
-            lineHeight: 1.02, 
+            fontSize: 'clamp(2.5rem, 7vw, 4.5rem)', 
+            lineHeight: 1.1, 
             color: 'white', 
-            marginBottom: '1.35rem' 
+            marginBottom: '1.25rem' 
           }}>
             Services Built Around<br />Real Claim Outcomes
           </h1>
 
           <p style={{ 
-            fontSize: '1.25rem', 
+            fontSize: '1.1rem', 
             color: 'rgba(255,255,255,0.78)', 
-            maxWidth: 620, 
+            maxWidth: 580, 
             margin: '0 auto' 
           }}>
             From policy selection to claim settlement — we support you at every stage.
@@ -123,35 +131,38 @@ export default function Services() {
         </div>
       </section>
 
-      {/* SERVICES GRID */}
-      <section style={{ background: '#F8FAFC', padding: '5.5rem 0' }}>
-        <div className="max-w-6xl mx-auto px-6">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '2rem' }}>
+      {/* SERVICES GRID - Fully Responsive */}
+      <section style={{ background: '#F8FAFC', padding: '3.5rem 1rem' }}>
+        <div style={{ maxWidth: 1280, margin: '0 auto' }}>
+          <div style={{ 
+            display: 'grid', 
+            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
+            gap: '1.5rem' 
+          }}>
             {services.map((service) => (
               <div 
                 key={service.id}
                 style={{
                   background: 'white',
-                  borderRadius: 22,
-                  padding: '2.5rem',
+                  borderRadius: 20,
+                  padding: '1.85rem 1.6rem',
                   border: service.highlight ? '2px solid #E8001C' : '1px solid #e2e8f0',
                   boxShadow: service.highlight 
-                    ? '0 25px 70px rgba(232, 0, 28, 0.12)' 
-                    : '0 15px 45px rgba(15,37,87,0.06)',
-                  position: 'relative',
-                  transition: 'all 0.3s ease'
+                    ? '0 18px 55px rgba(232, 0, 28, 0.1)' 
+                    : '0 10px 30px rgba(15,37,87,0.05)',
+                  position: 'relative'
                 }}
               >
                 {service.highlight && (
                   <div style={{
                     position: 'absolute',
-                    top: '-12px',
-                    right: '24px',
+                    top: '-11px',
+                    right: '20px',
                     background: '#E8001C',
                     color: 'white',
-                    fontSize: '0.75rem',
+                    fontSize: '0.7rem',
                     fontWeight: 700,
-                    padding: '4px 14px',
+                    padding: '3px 11px',
                     borderRadius: 50
                   }}>
                     MOST IMPORTANT
@@ -159,16 +170,16 @@ export default function Services() {
                 )}
 
                 <div style={{ 
-                  width: '48px', 
-                  height: '48px', 
+                  width: '44px', 
+                  height: '44px', 
                   background: service.color, 
                   borderRadius: 12, 
-                  marginBottom: '1.5rem',
+                  marginBottom: '1.1rem',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   color: 'white',
-                  fontSize: '1.5rem'
+                  fontSize: '1.3rem'
                 }}>
                   {service.id === 1 && '🟢'}
                   {service.id === 2 && '🔵'}
@@ -177,52 +188,61 @@ export default function Services() {
                   {service.id === 5 && '⚫'}
                 </div>
 
-                <h3 style={{ fontSize: '1.45rem', color: '#0A1F4A', marginBottom: '1rem', fontWeight: 700 }}>
+                <h3 style={{ fontSize: '1.3rem', color: '#0A1F4A', marginBottom: '0.8rem', fontWeight: 700 }}>
                   {service.title}
                 </h3>
 
-                <p style={{ color: '#64748b', lineHeight: 1.7, marginBottom: '1.5rem' }}>
+                <p style={{ color: '#64748b', lineHeight: 1.6, marginBottom: '1.3rem', fontSize: '0.92rem' }}>
                   {service.description}
                 </p>
 
-                <div style={{ marginBottom: '2rem' }}>
-                  <div style={{ fontSize: '0.85rem', fontWeight: 700, color: '#334155', marginBottom: '0.75rem' }}>
+                <div style={{ marginBottom: '1.6rem' }}>
+                  <div style={{ fontSize: '0.78rem', fontWeight: 700, color: '#334155', marginBottom: '0.55rem' }}>
                     WHAT YOU GET:
                   </div>
-                  <ul style={{ paddingLeft: '1.1rem', margin: 0 }}>
+                  <ul style={{ paddingLeft: '0.9rem', margin: 0 }}>
                     {service.points.map((point, i) => (
-                      <li key={i} style={{ color: '#334155', marginBottom: '0.45rem', lineHeight: 1.6 }}>
+                      <li key={i} style={{ color: '#334155', marginBottom: '0.35rem', fontSize: '0.88rem' }}>
                         {point}
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                <button 
-                  onClick={() => window.open('https://cal.com/insure-well-6wcyz0/30min', '_blank')}
+                <a 
+                  href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(service.whatsappMessage)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   style={{
-                    width: '100%',
-                    padding: '15px',
-                    background: service.highlight ? '#E8001C' : '#0A1F4A',
-                    color: 'white',
-                    border: 'none',
-                    borderRadius: 9999,
-                    fontWeight: 700,
-                    fontSize: '1rem',
-                    cursor: 'pointer',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    gap: 10
+                    gap: 8,
+                    width: '100%',
+                    padding: '13px',
+                    background: service.highlight ? '#E8001C' : '#0A1F4A',
+                    color: 'white',
+                    borderRadius: 9999,
+                    fontWeight: 700,
+                    fontSize: '0.92rem',
+                    textDecoration: 'none'
                   }}
                 >
                   {service.cta} <ArrowRight className="w-4 h-4" />
-                </button>
+                </a>
               </div>
             ))}
           </div>
         </div>
       </section>
+
+      {/* IRDA Disclaimer */}
+      <div style={{ background: '#F1F5F9', padding: '2rem 1.25rem' }}>
+        <div style={{ maxWidth: 900, margin: '0 auto', fontSize: '0.85rem', color: '#64748b', lineHeight: 1.6 }}>
+          <strong>Insurance is the subject matter of solicitation.</strong><br />
+          For more details on benefits, exclusions, limitations, terms &amp; conditions, please read the sales brochure / policy wording carefully before concluding a sale.
+        </div>
+      </div>
 
       <Footer />
       <WAFloat />
